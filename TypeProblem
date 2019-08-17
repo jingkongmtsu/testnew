@@ -1,0 +1,10 @@
+CAT is a Thing.
+
+["CAT", Thing* aThing]
+aThing = new Type["CAT"] ();   //Type name can be a variable, or equivalently ctor can be pointed by a function pointer.
+
+Current solution:
+
+aThing = makeAThingTable["CAT"];
+
+makeAThingTable has a ["CAT", &makeACat()] pair.  MakeACat returns a pointer to a Cat.
