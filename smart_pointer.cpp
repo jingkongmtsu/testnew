@@ -35,10 +35,11 @@ class C
 int main()
 {
 	//shared_ptr<A> pa = make_shared<A>(100);
-	B b(make_shared<A>(100)); //B b(make_shared<A>(100)); //A lives after this line.
+	shared_ptr<A const> pa = make_shared<A const>(100);
+	B b(pa);  //B b(make_shared<A>(100)); //A lives after this line.
 	b.printa();
-	C c(A(100));  //A dies after this line.
-	c.printa();
+	//C c(A(100));  //A dies after this line.
+	//c.printa();
 	cout << "after scope" << endl;
 }
 
